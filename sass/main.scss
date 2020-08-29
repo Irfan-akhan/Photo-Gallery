@@ -6,6 +6,21 @@ body {
     background-color: red;
     font-size: 10px;
 }
+.heading {
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    &::after {
+        content: '';
+        display: block;
+        width: 10%;
+        height: 2px;
+        margin: 0 auto;
+        background-color: #000;
+    }
+}
 
 nav {
     padding: 2rem;
