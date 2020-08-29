@@ -9,7 +9,8 @@ body {
 
 .heading {
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 600;
+  color: teal;
   padding: 1rem;
   text-transform: uppercase;
   text-align: center;
@@ -22,6 +23,24 @@ body {
   height: 2px;
   margin: 0 auto;
   background-color: #000;
+}
+
+.img_style {
+  padding: 1rem;
+  height: 14rem;
+  width: 15rem;
+  margin-right: 1rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-box-shadow: 2px 2px 10px 5px #cfcfcf;
+          box-shadow: 2px 2px 10px 5px #cfcfcf;
+}
+
+.img_style:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 nav {
@@ -44,25 +63,7 @@ main {
   margin: 0 auto;
   -webkit-box-shadow: 2px 2px 10px 13px #cecece;
           box-shadow: 2px 2px 10px 13px #cecece;
-  width: 90%;
+  width: 96%;
   padding: 0 1rem;
-}
-
-main div.images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  overflow-x: scroll;
-}
-
-main div.images img {
-  padding: 2rem;
-  background-color: brown;
-  height: 20rem;
-  width: 15rem;
-  margin-right: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
