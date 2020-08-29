@@ -41,4 +41,15 @@ main {
     margin: 0 auto;
     background-color: blue;
     width: 80%;
+    & div.images {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        & img {
+            padding: 2rem;
+            background-color: brown;
+            height: 20rem;
+            margin-right: 1rem;
+        }
+    }
 }
