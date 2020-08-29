@@ -44,11 +44,12 @@ main {
     & div.images {
         display: flex;
         justify-content: space-evenly;
-        flex-wrap: wrap;
+        overflow-x: scroll;
         & img {
             padding: 2rem;
             background-color: brown;
             height: 20rem;
+            width: 15rem;
             margin-right: 1rem;
         }
     }

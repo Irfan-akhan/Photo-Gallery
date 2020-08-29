@@ -54,14 +54,14 @@ main div.images {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  overflow-x: scroll;
 }
 
 main div.images img {
   padding: 2rem;
   background-color: brown;
   height: 20rem;
+  width: 15rem;
   margin-right: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
