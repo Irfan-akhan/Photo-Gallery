@@ -3,7 +3,6 @@ body {
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
-    background-color: red;
     font-size: 10px;
 }
 .heading {
@@ -39,8 +38,9 @@ nav {
 
 main {
     margin: 0 auto;
-    background-color: blue;
-    width: 80%;
+    box-shadow: 2px 2px 10px 13px rgb(206, 206, 206);
+    width: 90%;
+    padding: 0 1rem;
     & div.images {
         display: flex;
         justify-content: space-evenly;
