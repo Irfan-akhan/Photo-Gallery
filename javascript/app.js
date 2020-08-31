@@ -88,8 +88,6 @@ searchTermIn.addEventListener('keydown', function (event) {
                 data.results.map(item => {
                     searchedData.push(item.urls.small);
                 });
-                printImgs(searchedData);
-                tempSection = mainElement;
             })
             .catch(err => {
                 console.log(err);
