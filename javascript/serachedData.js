@@ -6,7 +6,7 @@ const createImgs = imgUrl => {
     let imgEl = document.createElement('img');
     imgEl.src = imgUrl;
     imgEl.classList.add('img_style');
-    tempSection.appendChild(imgEl);
+    tempSection.firstElementChild.appendChild(imgEl);
 };
 const printImgs = imagesUrls => {
     imagesUrls.forEach(imgUrl => {

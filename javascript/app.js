@@ -27,7 +27,9 @@ const loadData = () => {
                 process(item.json());
             });
         })
-        .catch(err => {});
+        .catch(err => {
+            console.log('Network Error', err);
+        });
 };
 const process = data => {
     console.log('in process');
@@ -78,7 +80,7 @@ const getSearchDataHandler = event => {
     if (event.keyCode === 13) {
         let inputSearchValue = event.target.value;
         fetch(
-            `https://api.unsplash.com/search/photos/?per_page=16&query=${inputSearchValue}&client_id=${ACCESS_KEY}`,
+            `https://api.unsplash.com/search/photos/?per_page=35&query=${inputSearchValue}&client_id=${ACCESS_KEY}`,
         )
             .then(res => res.json())
             .then(data => {
@@ -87,8 +89,6 @@ const getSearchDataHandler = event => {
                 });
                 sessionStorage.setItem('SearchItems', JSON.stringify(searchedData));
                 window.location = 'search.html';
-                // tempSection = mainElement;
-                // printImgs(searchedData);
             })
             .catch(err => {
                 console.log(err);
