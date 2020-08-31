@@ -3,12 +3,17 @@ const WILD_URL = `https://api.unsplash.com/search/photos/?per_page=10&query=wild
 const NATURE_URL = `https://api.unsplash.com/search/photos/?per_page=10&query=Nature&client_id=${ACCESS_KEY}`;
 const FOREST_URL = `https://api.unsplash.com/search/photos/?per_page=10&query=forest&client_id=${ACCESS_KEY}`;
 
+const searchTermIn = document.getElementById('search_term');
+
 const natureSection = document.querySelector('#nature');
 const wildSection = document.querySelector('#wild');
 const forestSection = document.querySelector('#tech');
-console.log(natureSection);
-const dataArray = [];
 const mainElement = document.querySelector('main');
+
+const dataArray = [];
+
+console.log(natureSection);
+let searchedData = [];
 console.log(mainElement);
 let counter = 0;
 let tempSection;
@@ -68,3 +73,27 @@ const printImages = data => {
     extractImgsData(data);
 };
 loadData();
+
+const getSearchDataHandler = event => {};
+
+// SetupEvent Listerners
+searchTermIn.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+        let inputSearchValue = event.target.value;
+        fetch(
+            `https://api.unsplash.com/search/photos/?per_page=16&query=${inputSearchValue}&client_id=${ACCESS_KEY}`,
+        )
+            .then(res => res.json())
+            .then(data => {
+                data.results.map(item => {
+                    searchedData.push(item.urls.small);
+                });
+                printImgs(searchedData);
+                tempSection = mainElement;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    } else {
+    }
+});
