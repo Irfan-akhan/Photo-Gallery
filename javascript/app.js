@@ -73,11 +73,8 @@ const printImages = data => {
     extractImgsData(data);
 };
 loadData();
-
-const getSearchDataHandler = event => {};
-
-// SetupEvent Listerners
-searchTermIn.addEventListener('keydown', function (event) {
+const loadNewPage = () => (window.location = 'search.html');
+const getSearchDataHandler = event => {
     if (event.keyCode === 13) {
         let inputSearchValue = event.target.value;
         fetch(
@@ -88,10 +85,15 @@ searchTermIn.addEventListener('keydown', function (event) {
                 data.results.map(item => {
                     searchedData.push(item.urls.small);
                 });
+                tempSection = mainElement;
+                printImgs(searchedData);
             })
             .catch(err => {
                 console.log(err);
             });
     } else {
     }
-});
+};
+
+// SetupEvent Listerners
+searchTermIn.addEventListener('keydown', loadNewPage);
