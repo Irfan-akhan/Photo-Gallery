@@ -73,8 +73,8 @@ const printImages = data => {
     extractImgsData(data);
 };
 loadData();
-const loadNewPage = () => (window.location = 'search.html');
 const getSearchDataHandler = event => {
+    console.log('In serached data');
     if (event.keyCode === 13) {
         let inputSearchValue = event.target.value;
         fetch(
@@ -85,8 +85,10 @@ const getSearchDataHandler = event => {
                 data.results.map(item => {
                     searchedData.push(item.urls.small);
                 });
-                tempSection = mainElement;
-                printImgs(searchedData);
+                sessionStorage.setItem('SearchItems', JSON.stringify(searchedData));
+                window.location = 'search.html';
+                // tempSection = mainElement;
+                // printImgs(searchedData);
             })
             .catch(err => {
                 console.log(err);
@@ -96,4 +98,4 @@ const getSearchDataHandler = event => {
 };
 
 // SetupEvent Listerners
-searchTermIn.addEventListener('keydown', loadNewPage);
+searchTermIn.addEventListener('keydown', getSearchDataHandler);
