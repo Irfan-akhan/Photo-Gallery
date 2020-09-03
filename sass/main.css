@@ -64,6 +64,12 @@ nav input#search_term {
   text-align: center;
 }
 
+nav h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
 main {
   margin: 2rem auto;
   text-align: center;
